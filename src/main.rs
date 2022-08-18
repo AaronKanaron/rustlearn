@@ -10,8 +10,8 @@ mod guess_number;
 
 fn main() {
     // factorial::factorial_run();
-    // currency_convert::currency_convert_run();
+    currency_convert::currency_convert_run();
     // triangle::triangle_run();
     // rand_func::rand_func_run()
-    guess_number::guess_number_run()
+    // guess_number::guess_number_run()
 }

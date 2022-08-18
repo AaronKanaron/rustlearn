@@ -9,11 +9,12 @@ use std::{io::stdin, convert};
 const SEK_TO_USD: f32 = 0.095;
 const USD_TO_SEK: f32 = 10.5;
 
-fn convert(amount: f32, choice: &str) -> f32 {
+enum Choice { SEK, USD }
+
+fn convert(amount: f32, choice: Choice) -> f32 {
     match choice {
-        "SEK" => amount * SEK_TO_USD,
-        "USD" => amount * USD_TO_SEK,
-        _ => amount
+        Choice::SEK => amount * SEK_TO_USD,
+        Choice::USD => amount * USD_TO_SEK
     }
 }
 
@@ -30,12 +31,12 @@ pub fn currency_convert_run() {
 
     match num {
         1 => {
-            choice = "SEK";
+            choice = Choice::SEK;
             sign = "kr";
             converted_sign = "$";
         },
         2 => {
-            choice = "USD";
+            choice = Choice::USD;
             sign = "$";
             converted_sign = "kr";
         },
