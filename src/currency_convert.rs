@@ -1,10 +1,4 @@
-#![allow(
-    unused_imports,
-    dead_code,
-    unused_variables
-)]
-
-use std::{io::stdin, convert};
+use std::io::stdin;
 
 const SEK_TO_USD: f32 = 0.095;
 const USD_TO_SEK: f32 = 10.5;
