@@ -27,6 +27,5 @@ fn restart(answer: i8) {
 pub fn guess_number_run() {
     println!("Guess a number: ");
     let answer: i8 = rand::thread_rng().gen_range(1..101);
-    println!("{}", answer);
     restart(answer);    
 }

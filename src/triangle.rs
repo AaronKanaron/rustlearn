@@ -27,4 +27,6 @@ pub fn triangle_run() {
             println!("{}", write_dots(i));
         }
     }
+
+
 }
