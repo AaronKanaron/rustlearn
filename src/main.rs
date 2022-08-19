@@ -8,6 +8,9 @@ mod triangle;
 mod rand_func;
 mod guess_number;
 mod fibonacci;
+mod alfabet;
+mod math;
+mod combos;
 
 fn main() {
     // factorial::factorial_run();
@@ -15,5 +18,8 @@ fn main() {
     // triangle::triangle_run();
     // rand_func::rand_func_run()
     // guess_number::guess_number_run()
-    fibonacci::fibonacci_run();
+    // fibonacci::fibonacci_run();
+    // alfabet::alfabet_run();
+    // math::math_run();
+    combos::combos_run();
 }

@@ -1,26 +1,25 @@
 use std::io::stdin;
 
-fn fibonacci_seq(index: i32) -> String {
-    
-    let mut prev: i128 = 0;
-    let mut curr = 1;
-    let mut next;
-    let mut res = String::new();
+//Memoized fibonacci algr
+fn fib(n: i128) -> i128 {
+    if n < 2 {
+        1
+    } else {
+        let mut memo = [1, 1];
+        let mut n = n - 2;
 
-    for i in 0..index {
-        if i == 1 {
-            res.push_str(&i.to_string());
-            res.push(' ');
-        } else{
-            next = prev + curr;
-            prev = curr;
-            curr = next;
-            
-            res.push_str(&next.to_string());
-            res.push(' ');
+        loop {
+            let [a, b] = memo;
+            let c = a + b;
+
+            if n == 0 {
+                return c;
+            }
+
+            memo = [b, c];
+            n -= 1;
         }
     }
-    return res;
 }
 
 pub fn fibonacci_run() {
@@ -28,7 +27,7 @@ pub fn fibonacci_run() {
 
     let mut num_input = String::new();
     stdin().read_line(&mut num_input).expect("Failed to read.");
-    let num = num_input.trim().parse().expect("Non number provided");
+    let num = num_input.trim().parse::<i128>().expect("Non number provided");
 
-    println!("{}", fibonacci_seq(num));
+    println!("{}", fib(num-1));
 }
